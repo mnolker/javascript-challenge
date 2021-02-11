@@ -8,6 +8,7 @@ var button = d3.select("#filter-btn");
 button.on("click", runEnter);
 // input.on("submit",runEnter);
 
+
 // Complete the event handler function to filter the table
 function runEnter() {
 

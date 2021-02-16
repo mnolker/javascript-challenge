@@ -20,27 +20,8 @@ tableData.forEach((ufoReport) => {
     });
 });
 
-// function updateTable() {
-//     // Get a reference to the table body
-//     var tbody = d3.select("tbody");
-//     tbody.html("");
-
-//     // Use d3 to update each cell's text with
-//     // ufoReport values (date/time, city, state, country, shape, comment)
-//     filteredData.forEach((ufoReport) => {
-//         var row = tbody.append("tr");
-//         Object.entries(ufoReport).forEach(([key, value]) => {
-//             var cell = row.append("td");
-//             cell.text(value);
-//         });
-//     });
-// };
-
 // Complete the event handler function to filter the table
 function runFilter() {
-    // Prevent the page from refreshing
-    d3.event.preventDefault();
-
     // Prevent the page from refreshing
     d3.event.preventDefault();
     
@@ -71,4 +52,3 @@ function runFilter() {
     });
 };
 
-    // updateTable(filteredData);

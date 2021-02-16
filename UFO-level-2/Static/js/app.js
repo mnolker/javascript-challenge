@@ -40,19 +40,30 @@ tableData.forEach((ufoReport) => {
 function runFilter() {
     // Prevent the page from refreshing
     d3.event.preventDefault();
-
-    // Prevent the page from refreshing
-    d3.event.preventDefault();
     
-    // Select the input element and get the raw HTML node
-    var inputElement = d3.select("#datetime");
+    // Select the input element and get the raw HTML node & Get the value property of the input elements
+    var dateValue = document.getElementById("datetime").value;
+    var cityValue = document.getElementById("city").value.toLowerCase();
+    var stateValue = document.getElementById("state").value.toLowerCase();
+    var countryValue = document.getElementById("country").value.toLowerCase();
+    var shapeValue = document.getElementById("shape").value.toLowerCase();
+    var filteredData = tableData;
 
-    // Get the value property of the input element
-    var inputValue = inputElement.property("value");
-    console.log(inputValue);
-
-    if (inputValue !== ""){
-    var filteredData = tableData.filter(date => date.datetime === inputValue);
+    //Fitler each search criteria
+    if (dateValue !== ""){
+        filteredData = filteredData.filter(data => data.datetime === dateValue);
+    }
+    if (cityValue !== ""){
+        filteredData = filteredData.filter(data => data.city === cityValue);
+    }
+    if (stateValue !== ""){
+        filteredData = filteredData.filter(data => data.state === stateValue);
+    }
+    if (countryValue !== ""){
+        filteredData = filteredData.filter(data => data.country === countryValue);
+    }
+    if (shapeValue !== ""){
+        filteredData = filteredData.filter(data => data.shape === shapeValue);
     }
     console.log(filteredData);
 
